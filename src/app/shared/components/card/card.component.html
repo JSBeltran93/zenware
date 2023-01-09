@@ -1,0 +1,48 @@
+<div class="position-status">
+  <div
+    class="content-status rounded-5"
+    [class]="classByEmployee.background"
+  ></div>
+</div>
+<div class="shadow-1 border-0 border-round-2xl p-3 surface-card">
+  <div class="card-container blue-container">
+    <div class="mb-3">
+      <div class="flex justify-content-between align-items-center">
+        <span [class]="classByEmployee.class" class="font-bold">
+          {{ classByEmployee.status | titlecase }}
+        </span>
+        <small class="line-height-4 text-600"> 11 / 5 </small>
+        <div class="text-right" pTooltip="Remove">
+          <i
+            class="pi pi-trash danger cursor-pointer"
+            (click)="confirmDeletedEmployee(employee)"
+          ></i>
+        </div>
+      </div>
+
+      <h5 class="my-3 text-xl">{{ employee.employee_name }}</h5>
+      <div
+        class="grid g-4 align-items-center cursor-pointer"
+        pTooltip="{{ employee.employee_name }}"
+        (click)="goToDetail(employee.id)"
+      >
+        <div class="col-4">
+          <p-avatar
+            image="{{ employeeService.getImgByAge(employee.employee_age) }}"
+            size="xlarge"
+            shape="circle"
+          ></p-avatar>
+        </div>
+        <div class="col-8">
+          <span>
+            Salary: <strong>{{ employee.employee_salary }}</strong>
+          </span>
+          <br />
+          <span>
+            Age: <strong>{{ employee.employee_age }}</strong>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

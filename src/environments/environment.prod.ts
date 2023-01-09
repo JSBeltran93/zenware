@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrlApi: 'https://dummy.restapiexample.com/api/v1',
 };

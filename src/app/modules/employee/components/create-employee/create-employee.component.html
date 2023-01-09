@@ -1,0 +1,102 @@
+<div>
+  <form class="p-fluid" (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <div class="field">
+      <label for="name" class="form-label small text-gray-600">
+        Full name
+      </label>
+      <input
+        type="text"
+        pInputText
+        class="form-control"
+        id="name"
+        name="employee_name"
+        aria-describedby="name-help"
+        [(ngModel)]="newEmployee.employee_name"
+        #employee_name="ngModel"
+        [required]="true"
+      />
+      <small
+        id="name-help"
+        class="p-error block"
+        *ngIf="
+          !employee_name.valid && (form.submitted || employee_name.touched)
+        "
+      >
+        {{
+          employeeService.validateFormControl(form.controls["employee_name"])
+        }}
+      </small>
+    </div>
+    <div class="field">
+      <label for="age" class="form-label small text-gray-600">Age</label>
+      <p-inputNumber
+        type="number"
+        class="form-control"
+        id="age"
+        name="employee_age"
+        aria-describedby="age-help"
+        [(ngModel)]="newEmployee.employee_age"
+        #employee_age="ngModel"
+        [useGrouping]="false"
+        [min]="0"
+        [max]="100"
+        [required]="true"
+      ></p-inputNumber>
+      <small
+        id="age-help"
+        class="p-error block"
+        *ngIf="!employee_age.valid && (form.submitted || employee_age.touched)"
+      >
+        {{ employeeService.validateFormControl(form.controls["employee_age"]) }}
+      </small>
+    </div>
+    <div class="field">
+      <label for="salary" class="form-label small text-gray-600">
+        Salary
+      </label>
+      <p-inputNumber
+        type="text"
+        class="form-control"
+        id="salary"
+        name="employee_salary"
+        aria-describedby="salary-help"
+        [(ngModel)]="newEmployee.employee_salary"
+        #employee_salary="ngModel"
+        [min]="0"
+        [max]="99999999"
+        locale="es-CO"
+        [required]="true"
+      ></p-inputNumber>
+      <small
+        id="salary-help"
+        class="p-error block"
+        *ngIf="
+          !employee_salary.valid && (form.submitted || employee_salary.touched)
+        "
+      >
+        {{
+          employeeService.validateFormControl(form.controls["employee_salary"])
+        }}
+      </small>
+    </div>
+    <!--  botones del formulario -->
+    <div>
+      <button
+        id="cancel"
+        pButton
+        pRipple
+        type="button"
+        class="font-semibold p-button-outlined my-2"
+        label="Cancel"
+        (click)="onCancel()"
+      ></button>
+
+      <button
+        pButton
+        class="font-semibold"
+        label="Create"
+        type="submit"
+      ></button>
+    </div>
+  </form>
+</div>

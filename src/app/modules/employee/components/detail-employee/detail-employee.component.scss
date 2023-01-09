@@ -1,0 +1,11 @@
+img {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+}
+
+@media (min-width: 760px) {
+  img {
+    max-width: 40vw;
+  }
+}

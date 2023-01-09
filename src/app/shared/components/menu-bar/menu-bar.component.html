@@ -1,0 +1,14 @@
+<p-tabMenu
+  [model]="items"
+  [activeItem]="items[2]"
+  styleClass="align-content-around align-items-center"
+>
+  <ng-template pTemplate="item" let-item let-i="index">
+    <div class="flex flex-column justify-content-center align-items-center">
+      <i class="text-600" [class]="item.icon"></i>
+      <div class="text-sm">
+        {{ item.label }}
+      </div>
+    </div>
+  </ng-template>
+</p-tabMenu>

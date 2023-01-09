@@ -1,0 +1,24 @@
+<div class="flex justify-content-between align-items-center m-2">
+  <div class="m-2 text-3xl text-gray-700 font-semibold">Employee list</div>
+  <button
+    pButton
+    type="button"
+    icon="pi pi-plus"
+    iconPos="left"
+    label="Add"
+    (click)="openModalCreateEmployee()"
+  ></button>
+</div>
+<div class="grid m-0 pb-8">
+  <div
+    class="col-12 md:col-6 lg:col-4 xl:col-3"
+    *ngFor="let employee of employees"
+  >
+    <app-card
+      *ngIf="employee"
+      [employee]="employee"
+      (deleteEmployee)="deletedEmployee(employee)"
+    >
+    </app-card>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+:host ::ng-deep {
+  .p-tabmenu-nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+  }
+}
