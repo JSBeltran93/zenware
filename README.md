@@ -33,4 +33,5 @@ la petición a la api directamente (queda bloqueda por cors) y otra  la otra hac
 De igual forma en algunas consultas GET, PUT o DELETED son bloqueadas, pero no es en todos los casos, el único json local es el del listado, el resto de métodos realizan la petición directamente a la api.
 Las peticiones por postman funcionan correctamente pero en la ejecución del proyecto son bloqueas por el servidor.
 ![image](https://user-images.githubusercontent.com/60237802/211441769-08ddabc2-8edb-4184-bdf3-c019a6203bbc.png)
+![image](https://user-images.githubusercontent.com/60237802/211441962-3be19ba7-8a0f-4f83-ad4f-dafffe7eb70c.png)
 
